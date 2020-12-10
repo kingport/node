@@ -10,10 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.0",
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^10.0.0",
+    "lin-mizar": "^0.3.8",
     "lodash": "^4.17.20",
-    "require-directory": "^2.1.1"
+    "require-directory": "^2.1.1",
+    "sequelize": "^6.3.5"
   }
 }
