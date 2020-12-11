@@ -15,11 +15,14 @@ const catchError = async (ctx, next) => {
     // 未知型错误 程序潜在的错误 无意识的错误
     // koa 中连接数据库 账号密码 输错
     // 开发环境 or 生产环境
-    if (global.config.env == "dev") {
+    const isHttpException = error instanceof HttpException;
+    const isDev = global.config.env == "dev";
+
+    if (isDev && !isHttpException) {
       throw error;
     }
 
-    if (error instanceof HttpException) {
+    if (isHttpException) {
       ctx.body = {
         msg: error.msg,
         error_code: error.errorCode,

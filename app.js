@@ -5,6 +5,7 @@ const InitManager = require("./core/init");
 // 全局捕捉错误
 const catchError = require("./middlewares/exception");
 
+require("./app/models/user");
 const app = new Koa();
 app.use(parser());
 app.use(catchError);
